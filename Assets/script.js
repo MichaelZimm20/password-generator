@@ -1,8 +1,10 @@
 // Assignment Code
+// Object for confirming of Lowercase, Uppercase, Numbers, Special characters
+// // Numeric Values array for password 0-9
+// var numericValues = ['0', '1', '2', '3', '4','5','6','7','8','9'];
 
 
-// Numeric Values array for password 0-9
-var numericValues = ['0', '1', '2', '3', '4','5','6','7','8','9'];
+
 
 
 //Lowercase Characters array, a-z 
@@ -29,24 +31,43 @@ var specialChars = function() {
 
 
 //The password Generator
-var passwordGenerator = function() {
+var generatePassword = function() {
 
   //Inital How many Charcters prompt
   var charPrompt = window.prompt('How many characters do you want you password to be? Choose between 8 - 128 charcters');
 
-  if (!charPrompt || charPrompt < 8 || charPrompt > 128){
-      window.alert("Please choose a valid number between 8 - 128.")
-
+  if (!charPrompt || charPrompt < 8 || charPrompt > 128) {
+    window.alert("Please choose a valid number of characters between 8 - 128.");
+      charPrompt; 
+      
   } else {
-    window.alert('Your password will now be '+ charPrompt + " characters long.");
+    
+      window.alert('Your password will now be '+ charPrompt + " characters long.");
+   
+  } 
+   
+  var confirmLowercase;
+  var confirmUppercase;
+  var confirmNum;
+  var confirmSpecialCharcaters;
+  if (charPrompt){
+    confirmLowercase = window.confirm("Would you like your password to contain lowercase characters ?"),
+    confirmUppercase = window.confirm("Would you like your password to contain uppercase characters ?"),
+    confirmNum = window.confirm("Would you like your password to contain numbers ?");
+    confirmSpecialCharcaters  = window.confirm("world you like your password to contain special characters ?");
+  } 
+  
+  if (!confirmLowercase && !confirmUppercase && !confirmNum && !confirmSpecialCharcaters){
+    window.alert(" Please choose at least one character!");
   }
-  console.log(charPrompt);
-
-
+ 
+  
+  
 
 
 }
-7
+
+
 
 
 
@@ -71,4 +92,4 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
 
-passwordGenerator();
+// passwordGenerator();
