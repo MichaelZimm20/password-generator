@@ -13,22 +13,31 @@ var generatePassword = function() {
   var passwordLength = window.prompt('How many characters do you want you password to be? Choose between 8 - 128 charcters');
   
   while (true) {
-    if (!passwordLength) {
+    if (isNaN(passwordLength)) {
       window.alert("Not a valid number, try again!");
+      generatePassword();
     } else if (passwordLength < 8 || passwordLength > 128) {
       window.alert("Please choose a valid number of characters between 8 - 128.");  
+      generatePassword();
     } else {
       break;
     }
   }
   
-   
+ 
+
+// Confirmation prompts for characters 
   var confirmLowercase = window.confirm("Would you like your password to contain lowercase characters ?");
   var confirmUppercase = window.confirm("Would you like your password to contain uppercase characters ?");
   var confirmNum = window.confirm("Would you like your password to contain numbers ?");
   var confirmSpecialCharcaters  = window.confirm("world you like your password to contain special characters ?");
   var numericValues = ['0', '1', '2', '3', '4','5','6','7','8','9'];
   var userOptions = [];
+
+  if (!confirmLowercase && !confirmUppercase && !confirmNum && !confirmSpecialCharcaters){
+    window.alert(" Please choose at least one character!");
+    generatePassword();
+   }
 
 
   //Lowercase Characters array, a-z 
@@ -54,10 +63,32 @@ var generateLowercase = function() {
     // console.log(specialChars());
   
 
+// putting the characters togther to form the password 
+if (confirmLowercase === true) {
+  userOptions.push(generateLowercase());
+}
+
+if (confirmUppercase === true) {
+  userOptions.push(generateUppercase());
+}
+
+if (confirmNum === true) {
+  userOptions.push(numericValues);
+}
+
+if (confirmSpecialCharcaters === true) {
+  userOptions.push(specialChars());
+}
 
 
-  // if (!confirmLowercase && !confirmUppercase && !confirmNum && !confirmSpecialCharcaters){
-  //   window.alert(" Please choose at least one character!");
+// Randomize the characters 
+for (i = 0; i < passwordLength; i++) {
+
+}
+
+
+
+  
   // } else if (confirmLowercase && confirmUppercase && confirmNum && confirmSpecialCharcaters) {
   //       userOptions = userOptions.concat(generateLowercase(), generateUppercase(), numericValues, specialChars());
   // }
