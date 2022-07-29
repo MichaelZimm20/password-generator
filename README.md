@@ -65,9 +65,9 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Important Links
 
-* Github Link:  https://github.com/MichaelZimm20/password-generator
+Github Link:  https://github.com/MichaelZimm20/password-generator
 
-* Deployable Live Link: https://michaelzimm20.github.io/password-generator/
+Deployable Live Link: https://michaelzimm20.github.io/password-generator/
 
 
 
