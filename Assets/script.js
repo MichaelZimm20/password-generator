@@ -1,14 +1,10 @@
 // Assignment Code
 
-// var confirmChars = {
-//   lowercase: "",
-//   uppercase: "",
-//   numbers: "",
-//   specialCharacters: ""
-//   userOptions: []
+
+
+// var passwordInfo = {
+
 // }
-
-
 
 
 //The password Generator
@@ -26,17 +22,23 @@ var generatePassword = function () {
       window.alert("Please choose a valid number of characters between 8 - 128.");
       generatePassword();
     } else {
+      alert("Your password will now be " + passwordCharacters + " characters!");
       break;
     }
   }
 
- 
+ var confirmChars = {
+  lowercase: "",
+  uppercase: "",
+  numbers: "",
+  specialCharacters: ""
+}
 
   // Confirmation prompts for characters 
   var confirmLowercase = window.confirm("Would you like your password to contain lowercase characters ?");
   var confirmUppercase = window.confirm("Would you like your password to contain uppercase characters ?");
   var confirmNum = window.confirm("Would you like your password to contain numbers ?");
-  var confirmSpecialCharcaters = window.confirm("world you like your password to contain special characters ?");
+  var confirmSpecialCharcaters = window.confirm("Would you like your password to contain special characters ?");
   var numericValues = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   var userOptions = [];
 
@@ -72,38 +74,82 @@ var generatePassword = function () {
 
 
 
-  // putting the characters togther to form the password 
-  if (confirmLowercase === true) {
+  
+
+  // Confirm that newPassword returns at least one of the value you from the array if all options are selected 
+
+  if (confirmLowercase && confirmUppercase && confirmNum && confirmSpecialCharcaters) {
+    userOptions.push(generateLowercase(), generateUppercase(), numericValues, specialChars());
+  }
+   else if (confirmLowercase && confirmUppercase && confirmNum){
+  userOptions.push(generateLowercase(), generateUppercase(), numericValues);
+} 
+  else if (confirmLowercase && confirmUppercase && confirmSpecialCharcaters) {
+    userOptions.push(generateLowercase(), generateUppercase(), specialChars());
+  } 
+  else if (confirmUppercase && confirmNum && confirmSpecialCharcaters) {
+    userOptions.push(generateUppercase(), numericValues, specialChars());
+  }
+  else if (confirmLowercase && confirmUppercase ) {
+    userOptions.push(generateLowercase(),generateUppercase());
+  }
+   else if (confirmLowercase && confirmNum) {
+    userOptions.push(generateLowercase(), numericValues);
+   }
+   else if (confirmLowercase && confirmSpecialCharcaters) {
+    userOptions.push(generateLowercase(), specialChars());
+   }
+   else if (confirmUppercase && confirmNum) {
+    userOptions.push(generateUppercase(), numericValues);
+   } 
+   else if (confirmUppercase && confirmSpecialCharcaters) {
+    userOptions.push(generateUppercase(), specialChars());
+   } 
+   else if (confirmSpecialCharcaters && confirmNum) {
+    userOptions.push(specialChars(), numericValues);
+   } 
+   // putting the characters together to form the password 
+  else if (confirmLowercase) {
     userOptions.push(generateLowercase());
   }
 
-  if (confirmUppercase === true) {
+  else if (confirmUppercase ) {
     userOptions.push(generateUppercase());
   }
 
-  if (confirmNum === true) {
+  else if (confirmNum) {
     userOptions.push(numericValues);
   }
 
-  if (confirmSpecialCharcaters === true) {
+  else if (confirmSpecialCharcaters) {
     userOptions.push(specialChars());
   }
 
 
 
 
+
+
+console.log(userOptions);
+
   // Randomize the characters and integers 
   var newPassword = ""; 
   for (i = 0; i < passwordCharacters; i++) {
-    newPassword += userOptions[Math.floor(Math.random() * userOptions.length)]; 
+    var randomNum = Math.floor(Math.random() * userOptions.length);
+    console.log(randomNum);
+    var randomArr = userOptions[randomNum];
+    console.log(randomArr);
+    randomNum = Math.floor(Math.random() * randomArr.length);
+
+    newPassword += randomArr[randomNum];
   }
 
+console.log(newPassword);
 
 
 
 
-
-
+return newPassword;
 
 
   
