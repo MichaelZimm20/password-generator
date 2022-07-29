@@ -1,12 +1,6 @@
 // Assignment Code
 
 
-
-// var passwordInfo = {
-
-// }
-
-
 //The password Generator
 var generatePassword = function () {
 
