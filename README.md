@@ -45,7 +45,7 @@ THEN the password is either displayed in an alert or written to the page
 
 * if, else if, if statements.
 
-* while loop to reset prompts if correct options are not inputed.
+* while loop, to reset prompts if correct options are not inputed.
 
 * functions, arrays, and objects  
 
@@ -57,7 +57,7 @@ THEN the password is either displayed in an alert or written to the page
 
 * Mapping ASCII characters to a string to an array for easier use of characters and special characters 
 
-* for loop to generate random characters or numbers from an array 
+* for loop, to generate random characters or numbers from an array 
 
 * function to link back to the button 
 ```
@@ -89,7 +89,7 @@ THEN the password is either displayed in an alert or written to the page
 ![My Professional Portfolio screenshots](./assets/images/uppercase-prompt.png "Uppercase prompt") 
 <br/><br/><br/><br/>
 
-![My Professional Portfolio screenshots](./assets/images/numbers-prompt.png"Numeric Values prompt") 
+![My Professional Portfolio screenshots](./assets/images/numbers-prompt.png "Numeric Values prompt") 
 <br/><br/><br/><br/>
 
 ![My Professional Portfolio screenshots](./assets/images/special-characters-prompt.png "Special Characters prompt") 
