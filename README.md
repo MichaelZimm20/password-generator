@@ -47,7 +47,7 @@ THEN the password is either displayed in an alert or written to the page
 
 * while loop, to reset prompts if correct options are not inputed.
 
-* functions, arrays, and objects  
+* functions and arrays 
 
 * confirm, alerts, and prompts
 
